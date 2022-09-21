@@ -24,7 +24,7 @@ import reactor.core.publisher.Mono;
 public class WebFluxConfig {
 	
 	private final String Authorization = "Authorization";
-	private final String AuthToken="token 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";
+	private final String AuthToken="token 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";
 	private final String BASE_URL="https://api.github.com";
 	
 	/**
