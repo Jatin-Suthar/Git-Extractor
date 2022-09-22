@@ -23,8 +23,6 @@ import reactor.core.publisher.Mono;
 @Configuration
 public class WebFluxConfig {
 	
-	private final String Authorization = "Authorization";
-	private final String AuthToken="token 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";
 	private final String BASE_URL="https://api.github.com";
 	
 	/**
@@ -37,7 +35,6 @@ public class WebFluxConfig {
 		WebClient webClient = WebClient.builder()
 				  .baseUrl(BASE_URL)
 				  .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE) 
-				  .defaultHeader(Authorization, AuthToken)
 				  .defaultUriVariables(Collections.singletonMap("url", BASE_URL))
 //				  .filter(errorHandler())
 				  .build();

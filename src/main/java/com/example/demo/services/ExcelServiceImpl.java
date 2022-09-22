@@ -21,6 +21,9 @@ public class ExcelServiceImpl implements ExcelService {
 	public ExcelServiceImpl() {
 		workbook = new XSSFWorkbook();
 		sheet = workbook.createSheet("sheet1");
+		sheet.setColumnWidth(0, 25 * 256);
+		sheet.setColumnWidth(1, 15 * 256);
+		sheet.setColumnWidth(2, 10 * 256);
 		Row header = sheet.createRow(0);
 	    header.createCell(0).setCellValue(ExcelHeaders.REPOSITORY.toString());
 	    header.createCell(1).setCellValue(ExcelHeaders.LANGUAGE.toString());

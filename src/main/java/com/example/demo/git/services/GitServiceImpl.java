@@ -14,9 +14,6 @@ import reactor.core.publisher.Mono;
 
 @Service
 public class GitServiceImpl implements GitService {
-
-	private final String Authorization = "Authorization";
-	private final String AuthToken="token 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";
 	
 	@Autowired
 	private WebClient webClient; 
@@ -26,7 +23,6 @@ public class GitServiceImpl implements GitService {
 		return webClient.get()
 				     .uri(url)
 				     .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
-				     .header(Authorization, AuthToken)
 				     .retrieve()
 				     .bodyToFlux(Map.class)
 				     .onErrorResume(WebClientResponseException.class,
@@ -38,7 +34,6 @@ public class GitServiceImpl implements GitService {
 		return webClient.get()
 			     .uri(url)
 			     .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
-			     .header(Authorization, AuthToken)
 			     .retrieve()
 			     .bodyToMono(Map.class)
 			     .onErrorResume(WebClientResponseException.class,
